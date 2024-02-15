@@ -1,0 +1,39 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+	<Dialog id="idDialogCreate" title="Basic Info" contentHeight="30%" contentWidth="50%">
+		<f:Form id="idSimpleFormBasicCreate">
+			<f:layout>
+				<f:ColumnLayout columnsM="2" columnsL="2" columnsXL="2"/>
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer>
+					<f:formElements>
+						<f:FormElement label="Id">
+							<f:fields>
+							 <Input id="idStudentId"  required="true" textAlign="Center" placeholder="Enter Id" />
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Name">
+							<f:fields>
+							<Input id="idStudentName"  required="true" textAlign="Center" placeholder="Enter Name" />
+							</f:fields>
+						</f:FormElement>
+                        <f:FormElement label="Age">
+							<f:fields>
+							<Input id="idStudentAge"  required="true" textAlign="Center" placeholder="Enter Age" />
+							</f:fields>
+						</f:FormElement>
+                        <f:FormElement label="Address">
+							<f:fields>
+							<Input id="idStudentAdd"  required="true" textAlign="Center" placeholder="Enter Address" />
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+		<buttons>
+            <Button text="Create" press="onPressCreateStudent"/>
+			<Button text="Cancel" press="onPressCancelCreate"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

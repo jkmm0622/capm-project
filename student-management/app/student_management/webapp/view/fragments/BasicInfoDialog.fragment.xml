@@ -1,0 +1,38 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+	<Dialog id="idDialogInfo" title="Basic Info" contentHeight="30%" contentWidth="50%">
+		<f:Form id="idSimpleFormBasic">
+			<f:layout>
+				<f:ColumnLayout columnsM="2" columnsL="2" columnsXL="2"/>
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer>
+					<f:formElements>
+						<f:FormElement label="Id">
+							<f:fields>
+							 <Text text="{jsonStudentInfoModel>/id}"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Name">
+							<f:fields>
+							<Text text="{jsonStudentInfoModel>/name}"/>
+							</f:fields>
+						</f:FormElement>
+                        <f:FormElement label="Age">
+							<f:fields>
+							<Text text="{jsonStudentInfoModel>/age}"/>
+							</f:fields>
+						</f:FormElement>
+                        <f:FormElement label="Address">
+							<f:fields>
+							<Text text="{jsonStudentInfoModel>/address}"/>
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+		<buttons>
+			<Button text="Cancel" press="onPressCancel"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

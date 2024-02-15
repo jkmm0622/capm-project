@@ -1,0 +1,43 @@
+<mvc:View controllerName="capm.studentmanagement.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}" titleAlignment="Center">
+        
+        <customHeader>
+        <Bar>
+            <contentRight>
+            <Button text="Create" press="onPressCreate" type="Emphasized"/>
+            </contentRight>
+        </Bar>
+        </customHeader>
+        <content>
+        <Table id="idStudentList" alternateRowColors="true" noDataText="No Data"
+					items="{ path: 'jsonStudentListModel>/'}">
+					<columns>
+						<Column>
+							<Text text="Id"/>
+						</Column>
+						<Column>
+							<Text text="Name"/>
+						</Column>
+                        <Column>
+							<Text text="Age"/>
+						</Column>
+                        <Column>
+							<Text text="Address"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem type="Navigation" press="onPressLineItem" >
+							<cells>
+								<Text text="{jsonStudentListModel>id}"/>
+                                <Text text="{jsonStudentListModel>name}"/>
+                                <Text text="{jsonStudentListModel>age}"/>
+                                <Text text="{jsonStudentListModel>address}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+        </content>
+    </Page>
+</mvc:View>
