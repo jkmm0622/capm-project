@@ -16,5 +16,16 @@
   "scripts": {
     "start": "cds-serve",
     "watch-student_management": "cds watch --open student_management/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "url": "db.sqlite"
+        },
+        "schema_evolution": "auto"
+      }
+    }
   }
 }

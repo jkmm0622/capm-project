@@ -1,4 +1,4 @@
-namespace student.management.db;
+namespace btp.student;
 
 entity BasicInfo {
     key id : String;
@@ -6,4 +6,5 @@ entity BasicInfo {
     age : String;
     address : String;
 }
+
 

@@ -27,7 +27,7 @@ sap.ui.define([
                 var bCompact = !!this.getView().$().closest(".sapUiSizeCompact").length;
 
                 $.ajax({
-                    url: "/StudentService/StudentList",
+                    url: "/api/v1/students/StudentList",
                     method: "GET",
                     contentType: "application/json",
                     dataType: "json",
@@ -75,7 +75,7 @@ sap.ui.define([
                 var bCompact = !!this.getView().$().closest(".sapUiSizeCompact").length;
 
                 $.ajax({
-                    url: "/StudentService/StudentList/" + Id,
+                    url: "/api/v1/students/StudentList/" + Id,
                     method: "GET",
                     contentType: "application/json",
                     dataType: "json",
@@ -142,7 +142,7 @@ sap.ui.define([
                 BusyIndicator.show();
                 debugger;
                 $.ajax({
-                    url: "/StudentService/StudentList",
+                    url: "/api/v1/students/StudentList",
                     method: "POST",
                     contentType: "application/json",
                     dataType: "json",
@@ -152,7 +152,10 @@ sap.ui.define([
                         debugger;
                         MessageBox.success(
                             "Created Successfully", {
-                            styleClass: bCompact ? "sapUiSizeCompact" : ""
+                            styleClass: bCompact ? "sapUiSizeCompact" : "",
+                            onClose : function(){
+                                location.reload();
+                            }
                         }
                         );
                     },
