@@ -5,6 +5,7 @@ entity BasicInfo {
     name : String;
     age : String;
     address : String;
+    status : String(1);
 }
 
 

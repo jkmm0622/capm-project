@@ -26,6 +26,9 @@
                         <Column>
 							<Text text="Address"/>
 						</Column>
+						<Column>
+							<Text text="Status"/>
+						</Column>
 					</columns>
 					<items>
 						<ColumnListItem type="Navigation" press="onPressLineItem" >
@@ -34,6 +37,7 @@
                                 <Text text="{jsonStudentListModel>name}"/>
                                 <Text text="{jsonStudentListModel>age}"/>
                                 <Text text="{jsonStudentListModel>address}"/>
+								<Text text="{jsonStudentListModel>status}"/>
 							</cells>
 						</ColumnListItem>
 					</items>

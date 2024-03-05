@@ -1,5 +1,5 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
-	<Dialog id="idDialogCreate" title="Basic Info" contentHeight="30%" contentWidth="50%">
+	<Dialog id="idDialogCreate" title="Basic Info" contentHeight="40%" contentWidth="60%">
 		<f:Form id="idSimpleFormBasicCreate">
 			<f:layout>
 				<f:ColumnLayout columnsM="2" columnsL="2" columnsXL="2"/>
@@ -25,6 +25,11 @@
                         <f:FormElement label="Address">
 							<f:fields>
 							<Input id="idStudentAdd"  required="true" textAlign="Center" placeholder="Enter Address" />
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Pass or Fail">
+							<f:fields>
+							<Input id="idStudentStatus" maxLength='1' required="true" textAlign="Center" placeholder="Enter Status" />
 							</f:fields>
 						</f:FormElement>
 					</f:formElements>

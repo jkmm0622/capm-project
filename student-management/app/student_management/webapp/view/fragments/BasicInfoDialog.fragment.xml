@@ -27,6 +27,11 @@
 							<Text text="{jsonStudentInfoModel>/address}"/>
 							</f:fields>
 						</f:FormElement>
+						 <f:FormElement label="Status">
+							<f:fields>
+							<Text text="{jsonStudentInfoModel>/status}"/>
+							</f:fields>
+						</f:FormElement>
 					</f:formElements>
 				</f:FormContainer>
 			</f:formContainers>

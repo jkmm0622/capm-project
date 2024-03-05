@@ -107,6 +107,7 @@ sap.ui.define([
                 sap.ui.getCore().byId("idStudentName").setValue("");
                 sap.ui.getCore().byId("idStudentAge").setValue("");
                 sap.ui.getCore().byId("idStudentAdd").setValue("");
+                sap.ui.getCore().byId("idStudentStatus").setValue("");
 
                 this.createStudentDialog.close();
             },
@@ -125,15 +126,21 @@ sap.ui.define([
                 var address = sap.ui.getCore().byId("idStudentAdd").getValue();
                 sap.ui.getCore().byId("idStudentAdd").setValue("");
 
+                var status = sap.ui.getCore().byId("idStudentStatus").getValue();
+                sap.ui.getCore().byId("idStudentStatus").setValue("");
+
                 debugger
 
                 this.createStudentDialog.close();
 
-                var oPayloadCreate =  {
-                    id : id,
-                    name : name,
-                    age : age,
-                    address : address
+                var oPayloadCreate = {
+                    student: {
+                        id: id,
+                        name: name,
+                        age: age,
+                        address: address,
+                        status : status
+                    }
                 };
 
                 var that = this;
@@ -142,27 +149,31 @@ sap.ui.define([
                 BusyIndicator.show();
                 debugger;
                 $.ajax({
-                    url: "/api/v1/students/StudentList",
+                    url: "/api/v1/students/createStudent",
                     method: "POST",
                     contentType: "application/json",
                     dataType: "json",
                     data: JSON.stringify(oPayloadCreate),
                     success: function (oSucess) {
+                        debugger;
                         BusyIndicator.hide();
                         debugger;
                         MessageBox.success(
                             "Created Successfully", {
                             styleClass: bCompact ? "sapUiSizeCompact" : "",
-                            onClose : function(){
+                            onClose: function () {
                                 location.reload();
                             }
                         }
                         );
                     },
                     error: function (oError) {
+                        debugger;
                         BusyIndicator.hide();
+                        var result = JSON.parse(oError.responseText);
+                        var message = result.error.message;
                         MessageBox.error(
-                            "Please contact administrator", {
+                            message , {
                             styleClass: bCompact ? "sapUiSizeCompact" : ""
                         }
                         );
